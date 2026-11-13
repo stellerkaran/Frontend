@@ -13,6 +13,9 @@ const nextConfig = {
     // GATE page exports SUBJECTS_LIST with topics field — ignore build error
     ignoreBuildErrors: true,
   },
+  experimental: {
+    serverComponentsExternalPackages: ["@google/genai"],
+  },
   async redirects() {
     return [
       {
