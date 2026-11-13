@@ -1,0 +1,457 @@
+/* ==========================================================================
+   Diploma semester page styles (Sem3 / Sem4 branch pages)
+   Extracted from the inline <style> block that was duplicated in 11 files.
+   Per-branch badge colours are intentionally NOT here -- they still live in
+   each component because Sem3 and Sem4 disagree on .branch-civil and would
+   otherwise collide in a single global stylesheet.
+   ========================================================================== */
+        .s3-page {
+          --blue:     #0d6efd;
+          --blue-dk:  #084298;
+          --blue-lt:  #e8f0fe;
+          --green:    #198754;
+          --green-lt: #e6ffed;
+          --indigo:   #4f46e5;
+          --text:     #0f172a;
+          --muted:    #64748b;
+          --border:   #e2e8f0;
+          --r:        14px;
+          --sh-sm:    0 4px 16px rgba(15,23,42,0.07);
+          --sh-md:    0 8px 28px rgba(15,23,42,0.11);
+          font-family: inherit;
+          background: linear-gradient(180deg, #f0f6ff 0%, #fff 60%);
+          min-height: 100vh;
+          padding-bottom: 60px;
+          box-sizing: border-box;
+          overflow-x: hidden;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        /* ── HERO ── */
+        .s3-hero {
+          max-width: 1100px;
+          margin: 0px auto 10px;
+          padding: 22px 16px 18px;
+          text-align: center;
+        }
+        .s3-hero-title {
+          font-size: clamp(1.3rem, 4.5vw, 2.3rem);
+          font-weight: 800;
+          color: var(--blue);
+          margin-bottom: 8px;
+          line-height: 1.25;
+          word-break: break-word;
+        }
+        
+        .s3-hero-sub {
+          font-size: clamp(.88rem, 2.5vw, 1.08rem);
+          color: var(--muted);
+          margin-bottom: 12px;
+          font-weight: 500;
+          word-break: break-word;
+        }
+        .s3-hero-desc {
+          font-size: clamp(.92rem, 2.3vw, 1.05rem);
+          color: #374151;
+          line-height: 1.7;
+          max-width: 1080px;
+          margin: 0 auto 10px;
+          text-align: left;
+        }
+        .s3-hero-hindi {
+          font-size: clamp(.86rem, 2.1vw, 1rem);
+          color: var(--muted);
+        }
+
+        /* ── LAYOUT ── */
+        .s3-layout {
+          display: grid;
+          grid-template-columns: 1fr 296px;
+          gap: 24px;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 2px;
+          align-items: start;
+        }
+        @media (max-width: 960px) {
+          .s3-layout { grid-template-columns: 1fr; }
+          .s3-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        }
+        @media (max-width: 560px) {
+          .s3-sidebar { grid-template-columns: 1fr; }
+          .s3-layout { padding: 0 10px; gap: 14px; }
+        }
+
+        /* ── SECTION ── */
+        .s3-section { margin-bottom: 24px; }
+        .s3-section-title {
+          font-size: clamp(1rem, 2.8vw, 1.22rem);
+          font-weight: 800;
+          color: var(--blue);
+          margin-bottom: 14px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid var(--blue-lt);
+          word-break: break-word;
+        }
+
+        /* ── INFO GRID ── */
+        .s3-info-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+        }
+        @media (max-width: 600px) { .s3-info-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 340px) { .s3-info-grid { grid-template-columns: 1fr; } }
+
+        .s3-info-card {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: var(--r);
+          padding: 10px 12px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow: var(--sh-sm);
+          transition: box-shadow .2s, transform .2s;
+          min-width: 0;
+        }
+        .s3-info-card:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+        .s3-info-icon  { font-size: 1.35rem; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+        .s3-info-label { font-size: clamp(.72rem, 1.7vw, .8rem); color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+        .s3-info-value { font-size: clamp(.84rem, 2vw, 1rem); font-weight: 700; color: var(--text); word-break: break-word; }
+
+        /* ── SUBJECTS BOX ── */
+        .s3-subjects-box {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          background: var(--green-lt);
+          border: 2px solid var(--green);
+          border-radius: var(--r);
+          padding: 16px;
+          box-shadow: var(--sh-sm);
+        }
+
+        .s3-subject-group-label {
+          font-size: clamp(.8rem, 2vw, .88rem);
+          font-weight: 800;
+          color: var(--green);
+          margin-bottom: 8px;
+          text-transform: uppercase;
+          letter-spacing: .4px;
+        }
+        .s3-sublist {
+          margin: 0;
+          padding-left: 16px;
+          color: #212529;
+          font-size: clamp(.88rem, 2.2vw, .97rem);
+          line-height: 1.85;
+        }
+        .s3-note {
+          margin-top: 12px;
+          background: #fff7e6;
+          border-left: 4px solid #ffc107;
+          padding: 10px 12px;
+          border-radius: 10px;
+          font-size: clamp(.86rem, 2vw, .96rem);
+          color: #374151;
+          line-height: 1.6;
+        }
+
+        /* ── PYQ INTRO ── */
+        .s3-pyq-intro {
+          font-size: clamp(.88rem, 2.2vw, .98rem);
+          color: #495057;
+          text-align: center;
+          margin-bottom: 16px;
+          line-height: 1.65;
+        }
+
+        /* ── YEAR BOX ── */
+        .s3-year-box {
+          background: linear-gradient(135deg, #e8f0ff, #fff);
+          border: 2px solid var(--blue);
+          border-radius: var(--r);
+          padding: 14px 12px;
+          margin-bottom: 18px;
+          box-shadow: var(--sh-sm);
+          scroll-margin-top: 80px;
+          overflow: hidden;
+        }
+        .s3-year-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin-bottom: 12px;
+        }
+        .s3-year-title {
+          font-size: clamp(.92rem, 2.8vw, 1.08rem);
+          font-weight: 800;
+          color: var(--blue);
+          margin: 0;
+          word-break: break-word;
+        }
+        .s3-year-meta   { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .s3-share-btn {
+          background: #f1f5f9;
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          padding: 3px 10px;
+          font-size: clamp(.74rem, 1.8vw, .84rem);
+          font-weight: 700;
+          color: var(--muted);
+          cursor: pointer;
+          transition: background .15s, color .15s;
+          white-space: nowrap;
+        }
+        .s3-share-btn:hover { background: var(--blue-lt); color: var(--blue); }
+
+        /* ── TABLE ── */
+        .s3-table-wrap {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          border-radius: 10px;
+          border: 1px solid #c8d9f8;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          min-width: 340px;
+          font-size: clamp(.82rem, 2vw, .98rem);
+        }
+        th {
+          background: var(--blue);
+          color: #fff;
+          padding: 10px 7px;
+          font-size: clamp(.76rem, 1.8vw, .92rem);
+          font-weight: 700;
+          text-align: center;
+          white-space: nowrap;
+        }
+        td {
+          background: #f9fbff;
+          border: 1px solid #dce8ff;
+          padding: 9px 7px;
+          text-align: center;
+          font-size: clamp(.78rem, 1.8vw, .94rem);
+          vertical-align: middle;
+        }
+        tr:nth-child(even) td { background: #f0f6ff; }
+        .s3-row-soon td { opacity: .65; }
+        .s3-sub-cell {
+          text-align: left !important;
+          padding-left: 10px !important;
+          font-weight: 600;
+          max-width: 160px;
+          word-break: break-word;
+          white-space: normal;
+        }
+        .s3-year-cell { font-weight: 700; color: var(--blue); white-space: nowrap; }
+        .s3-dl-cell   { white-space: nowrap; }
+        .s3-type-badge {
+          padding: 2px 8px;
+          border-radius: 999px;
+          font-size: clamp(.7rem, 1.6vw, .8rem);
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .s3-dl-btn {
+          position: relative;
+          background: linear-gradient(90deg, #0d6efd, #6610f2);
+          color: #fff;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: clamp(.74rem, 1.8vw, .88rem);
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-block;
+          overflow: hidden;
+          z-index: 1;
+          white-space: nowrap;
+        }
+        .s3-dl-btn::before {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          border-radius: 10px;
+          background: linear-gradient(120deg, transparent, #00eaff, #6610f2, #00eaff, transparent);
+          background-size: 300% 300%;
+          animation: s3BorderGlow 2.5s linear infinite;
+          z-index: -1;
+        }
+        .s3-dl-btn::after {
+          content: "";
+          position: absolute;
+          inset: 2px;
+          background: linear-gradient(90deg, #0d6efd, #6610f2);
+          border-radius: 6px;
+          z-index: -1;
+        }
+        .s3-dl-btn:hover { opacity: .9; color: #fff; }
+        @keyframes s3BorderGlow {
+          0%   { background-position: 0% 50%; }
+          100% { background-position: 300% 50%; }
+        }
+        .s3-soon-tag { font-size: clamp(.72rem, 1.7vw, .86rem); color: #94a3b8; font-style: italic; }
+
+        /* ── TIPS ── */
+        .s3-tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 520px) { .s3-tips-grid { grid-template-columns: 1fr; } }
+        .s3-tip-card {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: var(--r);
+          padding: 12px;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          box-shadow: var(--sh-sm);
+          transition: box-shadow .2s;
+        }
+        .s3-tip-card:hover { box-shadow: var(--sh-md); }
+        .s3-tip-icon { font-size: 1.35rem; flex-shrink: 0; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; }
+        .s3-tip-text { font-size: clamp(.86rem, 2vw, .96rem); color: #374151; line-height: 1.65; margin: 0; }
+
+        /* ── FAQ ── */
+        .s3-faq-sub { font-size: clamp(.86rem, 2vw, .96rem); color: var(--muted); margin-bottom: 14px; }
+        .s3-faq-item {
+          background: transparent;
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          margin-bottom: 10px;
+          overflow: hidden;
+          transition: border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+        .s3-faq-item:hover {
+          border-color: rgba(79,70,229,0.25);
+          box-shadow: 0 4px 16px rgba(15,23,42,0.05);
+        }
+        .s3-faq-btn {
+          width: 100%;
+          background: none;
+          border: none;
+          text-align: left;
+          padding: 16px 18px;
+          font-size: clamp(.9rem, 2.2vw, 1.04rem);
+          font-weight: 700;
+          color: var(--text);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          line-height: 1.4;
+        }
+        .s3-faq-btn:focus-visible { outline: 3px solid rgba(13,110,253,.35); border-radius: 12px; }
+        .s3-faq-chevron {
+          flex-shrink: 0;
+          color: #4f46e5;
+          transition: transform .25s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s3-faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height .3s ease, padding .3s ease;
+          padding: 0 18px;
+          color: var(--muted);
+          font-size: clamp(.86rem, 2vw, .98rem);
+          line-height: 1.75;
+          background: transparent;
+        }
+        .s3-faq-answer.open {
+          max-height: 300px;
+          padding: 0 18px 18px;
+          border-top: 1px solid rgba(0,0,0,0.05);
+          padding-top: 12px;
+        }
+
+        /* ── SIDEBAR ── */
+        .s3-sidebar { display: flex; flex-direction: column; gap: 16px; }
+        .s3-scard {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: var(--r);
+          padding: 16px;
+          box-shadow: var(--sh-sm);
+        }
+        .s3-scard-title { font-size: clamp(.94rem, 2.2vw, 1.05rem); font-weight: 800; color: var(--text); margin-bottom: 12px; }
+
+        .s3-ql {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 9px 11px;
+          border-radius: 10px;
+          background: #f8faff;
+          border: 1px solid var(--border);
+          text-decoration: none;
+          color: var(--text);
+          font-size: clamp(.86rem, 2vw, .96rem);
+          font-weight: 600;
+          margin-bottom: 6px;
+          transition: background .15s, border-color .15s, color .15s;
+        }
+        .s3-ql:last-child { margin-bottom: 0; }
+        .s3-ql:hover { background: var(--blue-lt); border-color: #b6d4fe; color: var(--blue); }
+
+        .s3-practice-card { background: linear-gradient(135deg, #4f46e5, #7c3aed); border: none; }
+        .s3-practice-desc { font-size: clamp(.86rem, 2vw, .95rem); color: rgba(255,255,255,.85); margin-bottom: 12px; line-height: 1.5; }
+        .s3-practice-btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 9px 12px;
+          border-radius: 10px;
+          background: #fff;
+          color: #4f46e5;
+          font-size: clamp(.86rem, 2vw, .96rem);
+          font-weight: 700;
+          text-decoration: none;
+          transition: opacity .15s;
+        }
+        .s3-practice-btn:hover { opacity: .9; color: #4f46e5; }
+        .s3-pb-ol { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.3); }
+        .s3-pb-ol:hover { background: rgba(255,255,255,.25); color: #fff; }
+
+        .s3-notif-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .s3-notif-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .s3-notif-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+        .s3-notif-name   { font-size: clamp(.86rem, 2vw, .96rem); font-weight: 700; color: var(--text); }
+        .s3-notif-status { font-size: clamp(.78rem, 1.8vw, .88rem); color: #16a34a; font-weight: 600; }
+        .s3-notif-date   { font-size: clamp(.74rem, 1.7vw, .84rem); color: var(--muted); }
+
+        .s3-protip-card { background: #fffbeb; border-color: #fde68a; text-align: center; }
+        .s3-protip-text { font-size: clamp(.86rem, 2vw, .96rem); color: #374151; line-height: 1.65; margin: 0; }
+
+        /* ── FOOTER ── */
+        .s3-footer {
+          max-width: 1100px;
+          margin: 32px auto 0;
+          padding: 16px 16px;
+          border-top: 1px solid var(--border);
+          text-align: center;
+        }
+        .s3-footer p { font-size: clamp(.74rem, 1.7vw, .86rem); color: #94a3b8; margin-bottom: 4px; }
+        .s3-footer p:last-child { margin-bottom: 0; }
+
+        /* ── SMALL DEVICE OVERRIDES ── */
+        @media (max-width: 400px) {
+          .s3-hero { margin-top: 22px; padding: 12px 10px 10px; }
+          .s3-year-box { padding: 8px 5px; }
+          table { font-size: .78rem; min-width: 300px; }
+          th { padding: 8px 5px; font-size: .74rem; }
+          td { padding: 7px 5px; font-size: .76rem; }
+          .s3-dl-btn { font-size: .74rem; padding: 5px 7px; }
+          .s3-type-badge { padding: 2px 6px; }
+          .s3-sub-cell { max-width: 120px; font-size: .76rem; }
+          .s3-faq-btn { padding: 11px 11px; }
+          .s3-scard { padding: 12px; }
+        }
