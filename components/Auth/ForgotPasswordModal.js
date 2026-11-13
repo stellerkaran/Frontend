@@ -26,7 +26,7 @@ export default function ForgotPasswordModal({ show, onClose, onBackToLogin, init
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  
+
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,27 +34,8 @@ export default function ForgotPasswordModal({ show, onClose, onBackToLogin, init
   // Countdown timer for OTP resend (60s)
   const [resendTimer, setResendTimer] = useState(0);
 
-  useEffect(() => {
-    if (show) {
-      if (initialEmail && !email) {
-        setEmail(initialEmail);
-      }
-    } else {
-      resetLocalState();
-    }
-  }, [show, initialEmail, email, resetLocalState]);
-
-  useEffect(() => {
-    let timerInterval;
-    if (resendTimer > 0) {
-      timerInterval = setInterval(() => {
-        setResendTimer((prev) => prev - 1);
-      }, 1000);
-    }
-    return () => clearInterval(timerInterval);
-  }, [resendTimer]);
-
-  const resetLocalState = () => {
+  /* ================= RESET STATE (must be declared BEFORE effects that use it) ================= */
+  const resetLocalState = useCallback(() => {
     setStep(1);
     setEmail(initialEmail || "");
     setOtp("");
@@ -66,7 +47,27 @@ export default function ForgotPasswordModal({ show, onClose, onBackToLogin, init
     setError("");
     setLoading(false);
     setResendTimer(0);
-  };
+  }, [initialEmail]);
+
+  useEffect(() => {
+    if (show) {
+      if (initialEmail) {
+        setEmail((prev) => prev || initialEmail);
+      }
+    } else {
+      resetLocalState();
+    }
+  }, [show, initialEmail, resetLocalState]);
+
+  useEffect(() => {
+    let timerInterval;
+    if (resendTimer > 0) {
+      timerInterval = setInterval(() => {
+        setResendTimer((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timerInterval);
+  }, [resendTimer]);
 
   const handleClose = () => {
     resetLocalState();
