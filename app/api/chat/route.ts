@@ -3564,7 +3564,6 @@ async function generateWithOpenRouter({
     return null;
   }
 }
-g
 // Optional secondary generation: Google Gemini (if GEMINI_API_KEY is available)
 async function generateWithGemini({
   apiKey,
