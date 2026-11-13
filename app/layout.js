@@ -6,7 +6,6 @@ import { AuthProvider } from "../context/AuthContext";
 import { AuthModalProvider } from "../context/AuthModalContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AiChatbot from "../components/AiChatbot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,7 +54,7 @@ export default function RootLayout({ children }) {
                 {children}
               </main>
               <Footer />
-              <AiChatbot />
+             
             </AuthModalProvider>
           </GoogleOAuthProvider>
         </AuthProvider>
