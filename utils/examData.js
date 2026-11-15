@@ -14,7 +14,8 @@ export const EXAM_GROUPS = [
         key: "engineering",
         title: "Engineering",
         exams: [
-            { id: "D2D", name: "D2D B.Tech", state: "Jharkhand", mono: "D2D", tone: "eng", path: "/exam-preparation" },
+            { id: "D2D", name: "D2D B.Tech Lateral", state: "Jharkhand", mono: "D2D", tone: "eng", path: "/exam-preparation" },
+            { id: "LEET", name: "BTech Lateral Entry", state: "Bihar", mono: "LEET", tone: "eng", path: "/bihar/exam-preparation" },
             { id: "GATE", name: "GATE", state: "All India", mono: "GATE", tone: "gate", path: "/gate/exam-preparation" },
         ],
     },
@@ -22,9 +23,9 @@ export const EXAM_GROUPS = [
         key: "polytechnic",
         title: "Polytechnic",
         exams: [
-            { id: "JHP", name: "Polytechnic", state: "Jharkhand", mono: "JP", tone: "poly", path: "/exam-preparation" },
-            { id: "JHPLE", name: "Polytechnic Lateral", state: "Jharkhand", mono: "PL", tone: "poly", path: "/exam-preparation" },
-            { id: "BRP", name: "Polytechnic", state: "Bihar", mono: "BP", tone: "bihar", path: "/bihar/exam-preparation" },
+            { id: "JHP", name: "Polytechnic", state: "Jharkhand", mono: "Poly", tone: "poly", path: "/exam-preparation" },
+            { id: "JHPLE", name: "Polytechnic Lateral", state: "Jharkhand", mono: "Poly LE", tone: "poly", path: "/exam-preparation" },
+            { id: "BRP", name: "Polytechnic", state: "Bihar", mono: "Poly", tone: "bihar", path: "/bihar/exam-preparation" },
         ],
     },
     {
