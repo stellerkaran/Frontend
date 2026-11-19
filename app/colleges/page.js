@@ -235,21 +235,24 @@ export default function CollegeFinderHome() {
       ogImageTag.setAttribute("content", ogImage);
     }
 
+    // Inject itemListSchema from window.__next_schemas (set in first useEffect)
     const jsonLd = document.createElement("script");
     jsonLd.type = "application/ld+json";
-    jsonLd.textContent = JSON.stringify(itemListSchema);
+    jsonLd.textContent = JSON.stringify(window.__next_schemas?.itemListSchema);
     document.head.appendChild(jsonLd);
 
+    // Inject breadcrumbSchema from window.__next_schemas (set in first useEffect)
     const breadcrumbJsonLd = document.createElement("script");
     breadcrumbJsonLd.type = "application/ld+json";
-    breadcrumbJsonLd.textContent = JSON.stringify(breadcrumbSchema);
+    breadcrumbJsonLd.textContent = JSON.stringify(window.__next_schemas?.breadcrumbSchema);
     document.head.appendChild(breadcrumbJsonLd);
 
+    // Inject faqSchema from window.__next_schemas (set in first useEffect)
     const faqJsonLd = document.createElement("script");
     faqJsonLd.type = "application/ld+json";
-    faqJsonLd.textContent = JSON.stringify(faqSchema);
+    faqJsonLd.textContent = JSON.stringify(window.__next_schemas?.faqSchema);
     document.head.appendChild(faqJsonLd);
-  }, [canonicalUrl, faqSchema, itemListSchema, metaDescription, ogImage, pageTitle, breadcrumbSchema]);
+  }, []);
 
   return (
     <div className="cf-page">
