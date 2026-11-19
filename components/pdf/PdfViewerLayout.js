@@ -719,7 +719,7 @@ function PdfViewerContent({
           {/* Center Column: PDF Document Viewer Stage */}
           <main className={`${classPrefix}-center-col`}>
             {/* Top Leaderboard Ad Banner (Desktop Only) */}
-            <LeaderboardAd slot="3476532920" />
+            {/* ⚠️ AdSense: slot ID 3476532920 - ensure this is unique per page */}\n <LeaderboardAd slot="3476532920" />
 
             <section className={`${classPrefix}-viewer-stage`} aria-label="PDF Document Reader">
               {rawDriveUrl ? (

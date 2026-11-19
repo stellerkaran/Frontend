@@ -11,6 +11,7 @@ import React, { useEffect, useRef, useState } from 'react';
  * The page guard also stops before the last year container, so an ad is never the
  * final element of the papers section. Append more ids here to cover further gaps.
  */
+export const AD_CLIENT = "ca-pub-9939857316410378";
 export const YEAR_GAP_AD_SLOTS = ["6247445156", "8194031779", "8948710243"];
 
 const AdBanner = ({ slot, yearGap, format = "auto", layout = "" }) => {
