@@ -171,7 +171,7 @@ function PlacementBar({ branch, rate, lpa, maxLpa, placed, total }) {
 
 // ---------- Leaderboard Ad 728x90 ----------
 // NOTE: ad slot IDs below are copied from the gp-adityapur page as placeholders.
-// Reusing the same slot ID across two different pages is against AdSense policy
+// Each ad slot MUST be unique per page - do not reuse across different pages
 // in some setups — generate fresh slot IDs for this page in your AdSense dashboard
 // before publishing.
 function LeaderboardAd({ slot }) {
@@ -843,7 +843,7 @@ export default function BtechLeCollegeDetail({ customId, routeSlug }) {
                 </Card.Body>
               </Card>
             </section>
-            <LeaderboardAd slot="5805927182" />
+            {/* ⚠️ AdSense: slot ID 5805927182 reused across pages - generate unique slot from AdSense dashboard */}\n <LeaderboardAd slot="5805927182" />
 
             {/* COURSES & SEATS */}
             <section ref={el => (sectionRefs.current.courses = el)} id="courses" className="mb-5" style={{ scrollMarginTop: 110 }}>
@@ -1147,7 +1147,7 @@ export default function BtechLeCollegeDetail({ customId, routeSlug }) {
             </section>
 
             {/* AD 3 */}
-            <LeaderboardAd slot="7488532762" />
+            {/* ⚠️ AdSense: slot ID 7488532762 reused across pages - generate unique slot from AdSense dashboard */}\n <LeaderboardAd slot="7488532762" />
 
             {/* PLACEMENTS */}
             <section ref={el => (sectionRefs.current.placements = el)} id="placements" className="mb-3" style={{ scrollMarginTop: 110 }}>

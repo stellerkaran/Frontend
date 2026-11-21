@@ -562,7 +562,7 @@ export default function Diploma() {
             ))}
           </div>
 
-          <LeaderboardAd slot="4412954465" />
+          {/* ⚠️ AdSense: slot ID 4412954465 is reused across multiple pages - generate a unique slot ID from your AdSense dashboard for this page */}\n <LeaderboardAd slot="4412954465" />
 
           <div className="dip-faq">
             <div className="dip-faq-head">Common Questions</div>

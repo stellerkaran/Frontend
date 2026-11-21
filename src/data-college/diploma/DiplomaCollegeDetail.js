@@ -904,7 +904,7 @@ export default function DiplomaCollegeDetail({ customId }) {
             )}
 
             {/* AD 2 */}
-            <LeaderboardAd slot="4412954465" />
+            {/* ⚠️ AdSense: slot ID 4412954465 reused across pages - generate unique slot from AdSense dashboard */}\n <LeaderboardAd slot="4412954465" />
 
             {/* FEES */}
             <section ref={el => (sectionRefs.current.fees = el)} id="fees" className="mb-5" style={{ scrollMarginTop: 110 }}>
@@ -991,7 +991,7 @@ export default function DiplomaCollegeDetail({ customId }) {
             </section>
 
             {/* AD 3 */}
-            <LeaderboardAd slot="7488532762" />
+            {/* ⚠️ AdSense: slot ID 7488532762 reused across pages - generate unique slot from AdSense dashboard */}\n <LeaderboardAd slot="7488532762" />
 
             {/* PLACEMENTS */}
             <section ref={el => (sectionRefs.current.placements = el)} id="placements" className="mb-3" style={{ scrollMarginTop: 110 }}>
