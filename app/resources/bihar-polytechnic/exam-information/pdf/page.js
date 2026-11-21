@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import PdfViewerLayout from "@/components/pdf/PdfViewerLayout";
 import {
   POLY_YEARS,
@@ -16,7 +17,8 @@ export const metadata = {
   },
 };
 
-const transformPapers = (papersByYear) => {
+export default function BiharPolytechnicExamInfoPdfPage() {
+  return redirect("/resources/bihar-polytechnic/pdf");
   const result = {};
   for (const [year, paper] of Object.entries(papersByYear)) {
     result[year] = {};

@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import PdfViewerLayout from "@/components/pdf/PdfViewerLayout";
 import {
   NURSING_YEARS,
@@ -17,8 +18,7 @@ export const metadata = {
 };
 
 export default function BiharBscNursingExamInfoPdfPage() {
-  return (
-    <PdfViewerLayout
+  return redirect("/resources/bihar-bsc-nursing/pdf");
       semesterBadge="BCECEB • Bihar B.Sc. Nursing (PCB)"
       categoryTitle="Bihar B.Sc. Nursing (BCECE PCB)"
       allSubjects={NURSING_SUBJECTS}
