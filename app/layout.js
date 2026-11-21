@@ -6,6 +6,8 @@ import { AuthProvider } from "../context/AuthContext";
 import { AuthModalProvider } from "../context/AuthModalContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import AiChatbot from "../components/AiChatbot";
+import AdSenseScript from "../components/AdSenseScript";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,12 +29,7 @@ export default function RootLayout({ children }) {
         >
           {`window.adsbygoogle = window.adsbygoogle || [];`}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9939857316410378"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        <AdSenseScript />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-90GE2ZHQ2R"
           strategy="afterInteractive"
@@ -54,7 +51,7 @@ export default function RootLayout({ children }) {
                 {children}
               </main>
               <Footer />
-             
+              <AiChatbot />
             </AuthModalProvider>
           </GoogleOAuthProvider>
         </AuthProvider>
